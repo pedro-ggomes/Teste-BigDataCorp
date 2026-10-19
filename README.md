@@ -1,10 +1,6 @@
 # Teste-BigDataCorp — Arquitetura de venda de ingressos
 
-Arquitetura para venda de ingressos de um mega show com demanda muito maior que a oferta.
-
 ![Arquitetura](arquitetura-ingressos.png)
-
-O arquivo editável está em [`arquitetura-ingressos.drawio`](arquitetura-ingressos.drawio) (abre em [diagrams.net](https://app.diagrams.net)).
 
 ## Requisitos e como são atendidos
 
@@ -25,4 +21,3 @@ O arquivo editável está em [`arquitetura-ingressos.drawio`](arquitetura-ingres
 7. **API de Confirmação:** recebe o webhook, valida a assinatura, grava o pedido no Postgres em transação idempotente e confirma a reserva no Redis (remove o TTL). Pagamento aprovado depois que a reserva expirou é estornado.
 8. **PostgreSQL:** fonte da verdade; `UNIQUE (ingresso_id)` impede venda duplicada mesmo se outra camada falhar.
 9. **Fila de mensagens + Workers:** e-mail, QR code e nota fiscal são processados de forma assíncrona, fora do caminho crítico da compra.
-# Teste-BigDataCorp
