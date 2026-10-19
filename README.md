@@ -1,4 +1,4 @@
-# Teste-BigDataCorp — Arquitetura de venda de ingressos
+# Teste-BigDataCorp - Arquitetura de venda de ingressos
 
 ![Arquitetura](arquitetura-ingressos.png)
 
